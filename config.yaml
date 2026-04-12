@@ -6,8 +6,8 @@ runtime:
   max_candidates: 4610
   resume: true
   dry_run: false
-  timeout_ms: 90000
-  navigation_timeout_ms: 90000
+  timeout_ms: 45000
+  navigation_timeout_ms: 60000
   retries: 3
   retry_backoff_seconds: 1.5
   throttle_min_seconds: 0.8
@@ -28,16 +28,21 @@ paths:
 # NOTE: Selectors are intentionally configurable because this portal changes often.
 # Keep specific selectors first, generic fallbacks later.
 selectors:
-  election_dropdown: "#electionType"
-  election_option: "Assembly GEN-BYE-Election-MAR-MAY-2026"
+  captcha_indicators:
+    - "text=Enter the code"
+    - "text=CAPTCHA"
+    - "text=I am not a robot"
 
-  period_dropdown: "#electionType"
-  period_option: "Assembly GEN-BYE-Election-MAR-MAY-2026"
+  election_dropdown: "select[name*='Election'], [aria-label*='Election']"
+  election_option: "Assembly Gen Bye Election"
 
-  type_dropdown: "#election"
-  type_option: "AC - GENERAL"
+  period_dropdown: "select[name*='Month'], select[name*='Period'], [aria-label*='Month']"
+  period_option: "Mar May 2026"
 
-  state_dropdown: "#states"
+  type_dropdown: "select[name*='Type'], [aria-label*='Type']"
+  type_option: "AC General"
+
+  state_dropdown: "select[name*='State'], [aria-label*='State']"
   state_option: "Tamil Nadu"
 
   search_button_candidates:
