@@ -28,16 +28,9 @@ paths:
 # NOTE: Selectors are intentionally configurable because this portal changes often.
 # Keep specific selectors first, generic fallbacks later.
 selectors:
-  captcha_indicators:
-    - "text=Enter the code"
-    - "text=CAPTCHA"
-    - "text=I am not a robot"
-
   election_dropdown: "#electionType"
   election_option: "Assembly GEN-BYE-Election-MAR-MAY-2026"
 
-  # Portal doesn't have a separate month dropdown;
-  # keep this mapped safely to same control for compatibility with existing code flow.
   period_dropdown: "#electionType"
   period_option: "Assembly GEN-BYE-Election-MAR-MAY-2026"
 
