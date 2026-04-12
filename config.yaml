@@ -33,16 +33,18 @@ selectors:
     - "text=CAPTCHA"
     - "text=I am not a robot"
 
-  election_dropdown: "select[name*='Election'], [aria-label*='Election']"
-  election_option: "Assembly Gen Bye Election"
+  election_dropdown: "#electionType"
+  election_option: "Assembly GEN-BYE-Election-MAR-MAY-2026"
 
-  period_dropdown: "select[name*='Month'], select[name*='Period'], [aria-label*='Month']"
-  period_option: "Mar May 2026"
+  # Portal doesn't have a separate month dropdown;
+  # keep this mapped safely to same control for compatibility with existing code flow.
+  period_dropdown: "#electionType"
+  period_option: "Assembly GEN-BYE-Election-MAR-MAY-2026"
 
-  type_dropdown: "select[name*='Type'], [aria-label*='Type']"
-  type_option: "AC General"
+  type_dropdown: "#election"
+  type_option: "AC - GENERAL"
 
-  state_dropdown: "select[name*='State'], [aria-label*='State']"
+  state_dropdown: "#states"
   state_option: "Tamil Nadu"
 
   search_button_candidates:
